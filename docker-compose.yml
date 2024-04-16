@@ -15,6 +15,11 @@ services:
       database__connection__user: ${DB_USER}
       database__connection__password: ${DB_PASSWORD}
       database__connection__database: ${DB_NAME}
+
+      mail__transport: ${MAIL_TRANSPORT}
+      mail__options__service: ${MAIL_SERVICE}
+      mail__options__auth__user: ${MAIL_USER}
+      mail__options__auth__password: ${MAIL_PASSWORD}
       # this url value is just an example, and is likely wrong for your environment!
       url: ${SITE_URL}
       # contrary to the default mentioned in the linked documentation, this image defaults to NODE_ENV=production (so development mode needs to be explicitly specified if desired)
