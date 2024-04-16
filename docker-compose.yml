@@ -4,6 +4,8 @@ services:
   ghost:
     image: ghost:latest
     restart: always
+    depends_on:
+      - database
     ports:
       - 8080:2368
     environment:
@@ -18,7 +20,7 @@ services:
       # contrary to the default mentioned in the linked documentation, this image defaults to NODE_ENV=production (so development mode needs to be explicitly specified if desired)
       #NODE_ENV: development
     volumes:
-      - ghost:/var/lib/ghost/content
+      - /home/ghost/content:/var/lib/ghost/content
 
   database:
     image: mysql:8.0
@@ -26,7 +28,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - db:/var/lib/mysql
+      - /home/ghost/mysql:/var/lib/mysql
 
 volumes:
   ghost:
