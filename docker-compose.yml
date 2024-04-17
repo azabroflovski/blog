@@ -17,6 +17,7 @@ services:
       database__connection__database: ${DB_NAME}
 
       mail__transport: ${MAIL_TRANSPORT}
+      mail__from: ${MAIL_FROM}
       mail__options__service: ${MAIL_SERVICE}
       mail__options__host: ${MAIL_HOST}
       mail__options__port: ${MAIL_PORT}
