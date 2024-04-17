@@ -29,7 +29,7 @@ services:
       # contrary to the default mentioned in the linked documentation, this image defaults to NODE_ENV=production (so development mode needs to be explicitly specified if desired)
       #NODE_ENV: development
     volumes:
-      - /var/lib/ghost/content
+      - /home/ghost/content:/var/lib/ghost/content
 
   database:
     image: mysql:8.0
@@ -37,7 +37,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - /var/lib/mysql
+      - /home/ghost/mysql:/var/lib/mysql
 
 volumes:
   ghost:
